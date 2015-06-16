@@ -6,23 +6,39 @@ html
     script src="http://code.jquery.com/jquery.js"
     script src="/assets/js/uikit.min.js"
   body
+    javascript:
+      jQuery(function($) {
+        $('#form').submit(function(event) {
+          event.preventDefault();
+          var $form = $(this);
+          $.ajax({
+            url: $form.attr('action'),
+            type: $form.attr('method'),
+            data: $form.serialize(),
+
+            success: function(result, textStatus) {
+              $('#target_name').text(result);
+            }
+          });
+        })
+      })
+
     .uk-container.uk-container-center
       br
       h1 メインページ
       .uk-grid.uk-grid-divider
         .uk-width-1-2
           h2 style="text-align:center" Player1
-          .uk-form
+          form.uk-form#form method="get" action="/api/battle"
             table.uk-table
               tr
                 th.uk-width-1-3.uk-text-center プレイヤ名
                 td.uk-width-2-3
-                  input.uk-width-1-1 type="text"
+                  input.uk-width-1-1 type="text" name="player1_name"
             div style="text-align:center"
-              button.uk-button hoge
+              button.uk-button type="submit" hoge
+
         .uk-width-1-2
           h2 style="text-align:center" Player2
-
-
-
+          p#target_name
 
