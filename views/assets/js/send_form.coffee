@@ -26,6 +26,14 @@ jQuery(($) ->
           status: 'success'
           timeout: 3000
         })
+
+      # 通信失敗時
+      error: (textStatus, error) ->
+        UIkit.notify({
+          message: "Error!!"
+          status: 'danger'
+          timeout: 3000
+        })
     })
   )
 )
