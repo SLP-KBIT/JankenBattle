@@ -8,27 +8,25 @@ html
     script src="/uikit/js/uikit.min.js"
     script src="/uikit/js/components/notify.js"
   body
-    javascript:
-      jQuery(function($) {
-        $('#form').submit(function(event) {
-          event.preventDefault();
-          var $form = $(this);
+    coffee:
+      jQuery(($) ->
+        $('#form').submit((event) ->
+          event.preventDefault()
+          $form = $(this)
           $.ajax({
-            url: $form.attr('action'),
-            type: $form.attr('method'),
-            data: $form.serialize(),
-
-            success: function(result, textStatus) {
-              $('#target_name').text(result);
+            url: $form.attr('action')
+            type: $form.attr('method')
+            data: $form.serialize()
+            success: (result, textStatus) ->
+              $('#target_name').text(result)
               UIkit.notify({
-                message: "Success!!",
-                status: 'success',
+                message: "Success!!"
+                status: 'success'
                 timeout: 3000
-              });
-            }
-          });
-        })
-      })
+              })
+          })
+        )
+      )
 
     .uk-container.uk-container-center
       br
