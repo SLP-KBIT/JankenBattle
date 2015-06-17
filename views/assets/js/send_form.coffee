@@ -20,7 +20,7 @@ jQuery(($) ->
 
       # 通信成功時
       success: (result, textStatus) ->
-        $('#target_name').text(result)
+        Game.exec(result)
         UIkit.notify({
           message: "Success!!"
           status: 'success'
