@@ -5,9 +5,9 @@ class window.Game
   @PAPER: 300
 
   @exec: (result) ->
-    rock = $("img#rock")
-    scissors = $("img#scissors")
-    paper = $("img#paper")
+    rock = $("<img class='rock'>")
+    scissors = $("<img class='scissors'>")
+    paper = $("<img class='paper'>")
     result.split('\n').forEach((battle) ->
       data = battle.split('|')
       status = data[0]
@@ -24,7 +24,7 @@ class window.Game
           image = scissors
         else if elem is Game.PAPER
           image = paper
-        $('#target tbody > tr:last > td:last').append(image.clone().css('display', 'inline'))
+        $('#target tbody > tr:last > td:last').append(image.clone())
       )
     )
 
