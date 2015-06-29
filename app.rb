@@ -6,7 +6,7 @@ get '/' do
 end
 
 get '/api/battle' do
-  "0,1,0\n0,0,2\n2,1,1"
+  "100,200|1\n100,100|0\n300,200|2"
 end
 
 get '/assets/js/send_form.js' do
