@@ -10,6 +10,9 @@ html
     script src="/assets/js/game.js"
     script src="/assets/js/send_form.js"
   body
+    img#rock src="/images/rock.png" style="display:none"
+    img#scissors src="/images/scissors.png" style="display:none"
+    img#paper src="/images/paper.png" style="display:none"
     .uk-container.uk-container-center
       br
       h1 メインページ
@@ -27,5 +30,12 @@ html
 
         .uk-width-1-2
           h2 style="text-align:center" Player2
-          p#target_name
+
+      .uk-grid
+        .uk-width-1-3
+        .uk-width-1-3
+          table.uk-table.uk-width-1-1#target
+            tbody
+              tr
+        .uk-width-1-3
 

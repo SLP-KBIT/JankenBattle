@@ -6,7 +6,7 @@ get '/' do
 end
 
 get '/api/battle' do
-  "name = " + params["player1_name"]
+  "100,200|1\n100,100|0\n300,200|2"
 end
 
 get '/assets/js/send_form.js' do
