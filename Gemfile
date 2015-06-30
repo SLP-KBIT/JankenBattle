@@ -7,3 +7,5 @@ gem "slim"
 gem "coffee-script"
 gem "sass"
 
+gem "rubocop", require: false
+
