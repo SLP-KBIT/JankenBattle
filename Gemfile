@@ -8,4 +8,5 @@ gem "coffee-script"
 gem "sass"
 
 gem "rubocop", require: false
+gem "rspec", require: false
 
