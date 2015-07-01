@@ -36,6 +36,20 @@ describe "App" do
       end
     end
 
+    describe "GET /assets/js/turn.js" do
+      subject { get '/assets/js/turn.js' }
+      it "正常なレスポンスが返ること" do
+        expect(subject).to be_ok
+      end
+    end
+
+    describe "GET /assets/js/hand.js" do
+      subject { get '/assets/js/hand.js' }
+      it "正常なレスポンスが返ること" do
+        expect(subject).to be_ok
+      end
+    end
+
     describe "GET /assets/css/application.css" do
       subject { get '/assets/css/application.css' }
       it "正常なレスポンスが返ること" do
