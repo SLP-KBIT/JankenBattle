@@ -17,6 +17,10 @@ get '/assets/js/game.js' do
   coffee :'assets/js/game'
 end
 
+get '/assets/js/turn.js' do
+  coffee :'assets/js/turn'
+end
+
 get '/assets/css/application.css' do
   sass :'assets/css/application'
 end
