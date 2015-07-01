@@ -21,6 +21,10 @@ get '/assets/js/turn.js' do
   coffee :'assets/js/turn'
 end
 
+get '/assets/js/hand.js' do
+  coffee :'assets/js/hand'
+end
+
 get '/assets/css/application.css' do
   sass :'assets/css/application'
 end
