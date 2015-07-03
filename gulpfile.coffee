@@ -5,6 +5,7 @@ concat = require 'gulp-concat'
 uglify = require 'gulp-uglify'
 plumber = require 'gulp-plumber'
 imagemin = require 'gulp-imagemin'
+del = require 'del'
 
 paths = {
   scripts: 'src/scripts/**/*.coffee'
@@ -40,6 +41,13 @@ gulp.task 'watch', ->
   gulp.watch paths.scripts, ['scripts']
   gulp.watch paths.styles, ['styles']
   gulp.watch paths.images, ['images']
+
+gulp.task 'clean', ->
+  del [
+    build_paths.scripts
+    build_paths.styles
+    build_paths.images
+  ]
 
 gulp.task 'default',
   [
