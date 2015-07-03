@@ -5,9 +5,9 @@ var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
 
 var paths = {
-  scripts: 'src/scripts/*.coffee',
-  styles: 'src/styles/*.sass',
-  images: 'src/images/*'
+  scripts: 'src/scripts/**/*.coffee',
+  styles: 'src/styles/**/*.sass',
+  images: 'src/images/**/*'
 };
 
 var build_paths = {
