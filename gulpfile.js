@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var coffee = require('gulp-coffee');
+var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
@@ -24,5 +25,12 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(build_paths.scripts));
 });
 
-gulp.task('default', ['scripts'])
+gulp.task('styles', function() {
+  return gulp.src(paths.styles)
+    .pipe(sass())
+    .pipe(concat('all.min.css'))
+    .pipe(gulp.dest(build_paths.styles));
+});
+
+gulp.task('default', ['scripts', 'styles'])
 
