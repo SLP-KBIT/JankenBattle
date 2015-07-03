@@ -1,0 +1,30 @@
+{
+  "name": "janken_battle",
+  "version": "0.0.0",
+  "description": "C言語初心者向けのじゃんけんAI対戦ゲーム",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SLP-KBIT/JankenBattle.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/SLP-KBIT/JankenBattle/issues"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-plumber": "~1.0.1",
+    "gulp-coffee": "~2.3.1",
+    "gulp-concat": "~2.6.0",
+    "gulp-uglify": "~1.2.0",
+    "gulp-sass": "~2.0.3",
+    "gulp-imagemin": "~2.3.0",
+    "coffee-script": "~1.9.3",
+    "del": "~1.2.0",
+    "run-sequence": "~1.1.1"
+  }
+}
