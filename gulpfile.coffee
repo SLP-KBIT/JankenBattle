@@ -48,12 +48,12 @@ gulp.task 'watch', ->
   gulp.watch paths.images, ['images']
 
 #--- clean
-gulp.task 'clean', ->
+gulp.task 'clean', (callback) ->
   del [
     build_paths.scripts
     build_paths.styles
     build_paths.images
-  ]
+  ], callback
 
 #--- build
 gulp.task 'build',
@@ -65,9 +65,5 @@ gulp.task 'build',
 
 #--- default
 gulp.task 'default', ->
-  runSequence [
-    'watch'
-    'clean'
-    'build'
-  ]
+  runSequence 'clean', 'build', 'watch'
 
