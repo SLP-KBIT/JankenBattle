@@ -4,6 +4,7 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
+var imagemin = require('gulp-imagemin');
 
 var paths = {
   scripts: 'src/scripts/**/*.coffee',
@@ -32,5 +33,11 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(build_paths.styles));
 });
 
-gulp.task('default', ['scripts', 'styles'])
+gulp.task('images', function() {
+  return gulp.src(paths.images)
+    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(gulp.dest(build_paths.images));
+});
+
+gulp.task('default', ['scripts', 'styles', 'images'])
 
