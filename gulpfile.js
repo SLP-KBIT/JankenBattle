@@ -39,5 +39,11 @@ gulp.task('images', function() {
     .pipe(gulp.dest(build_paths.images));
 });
 
-gulp.task('default', ['scripts', 'styles', 'images'])
+gulp.task('watch', function() {
+  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.styles, ['styles']);
+  gulp.watch(paths.images, ['images']);
+});
+
+gulp.task('default', ['watch', 'scripts', 'styles', 'images'])
 
