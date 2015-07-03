@@ -32,7 +32,7 @@ gulp.task 'scripts', ->
 gulp.task 'styles', ->
   gulp.src paths.styles
     .pipe sass()
-    .pipe concat('all.min.css')
+    .pipe concat('all.css')
     .pipe gulp.dest(build_paths.styles)
 
 #--- images
