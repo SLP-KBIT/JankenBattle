@@ -5,6 +5,7 @@ concat = require 'gulp-concat'
 uglify = require 'gulp-uglify'
 plumber = require 'gulp-plumber'
 imagemin = require 'gulp-imagemin'
+runSequence = require 'run-sequence'
 del = require 'del'
 
 paths = {
@@ -49,11 +50,17 @@ gulp.task 'clean', ->
     build_paths.images
   ]
 
-gulp.task 'default',
+gulp.task 'build',
   [
-    'watch'
     'scripts'
     'styles'
     'images'
+  ]
+
+gulp.task 'default', ->
+  runSequence [
+    'watch'
+    'clean'
+    'build'
   ]
 
