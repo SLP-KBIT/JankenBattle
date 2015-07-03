@@ -1,12 +1,12 @@
-gulp = require 'gulp'
-coffee = require 'gulp-coffee'
-sass = require 'gulp-sass'
-concat = require 'gulp-concat'
-uglify = require 'gulp-uglify'
-plumber = require 'gulp-plumber'
-imagemin = require 'gulp-imagemin'
+gulp        = require 'gulp'
+coffee      = require 'gulp-coffee'
+sass        = require 'gulp-sass'
+concat      = require 'gulp-concat'
+uglify      = require 'gulp-uglify'
+plumber     = require 'gulp-plumber'
+imagemin    = require 'gulp-imagemin'
 runSequence = require 'run-sequence'
-del = require 'del'
+del         = require 'del'
 
 paths = {
   scripts: 'src/scripts/**/*.coffee'
@@ -20,6 +20,7 @@ build_paths = {
   images: 'public/assets/images'
 }
 
+#--- scripts
 gulp.task 'scripts', ->
   gulp.src paths.scripts
     .pipe coffee()
@@ -27,22 +28,26 @@ gulp.task 'scripts', ->
     .pipe concat('all.min.js')
     .pipe gulp.dest(build_paths.scripts)
 
+#--- styles
 gulp.task 'styles', ->
   gulp.src paths.styles
     .pipe sass()
     .pipe concat('all.min.css')
     .pipe gulp.dest(build_paths.styles)
 
+#--- images
 gulp.task 'images', ->
   gulp.src paths.images
     .pipe imagemin({optimizationLevel: 5})
     .pipe gulp.dest(build_paths.images)
 
+#--- watch
 gulp.task 'watch', ->
   gulp.watch paths.scripts, ['scripts']
   gulp.watch paths.styles, ['styles']
   gulp.watch paths.images, ['images']
 
+#--- clean
 gulp.task 'clean', ->
   del [
     build_paths.scripts
@@ -50,6 +55,7 @@ gulp.task 'clean', ->
     build_paths.images
   ]
 
+#--- build
 gulp.task 'build',
   [
     'scripts'
@@ -57,6 +63,7 @@ gulp.task 'build',
     'images'
   ]
 
+#--- default
 gulp.task 'default', ->
   runSequence [
     'watch'
