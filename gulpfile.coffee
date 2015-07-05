@@ -33,7 +33,7 @@ gulp.task 'scripts', ->
   .pipe plumber()
   .pipe source('main.js')
   .pipe buffer()
-  .pipe uglify()
+  #.pipe uglify()
   .pipe gulp.dest(build_paths.scripts)
 
 #--- styles
