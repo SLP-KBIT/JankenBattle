@@ -10,6 +10,7 @@ del         = require 'del'
 browserify  = require 'browserify'
 reactify    = require 'coffee-reactify'
 source      = require 'vinyl-source-stream'
+buffer      = require 'vinyl-buffer'
 
 paths = {
   scripts: 'src/scripts/**/*.coffee'
@@ -25,11 +26,14 @@ build_paths = {
 
 #--- scripts
 gulp.task 'scripts', ->
-  gulp.src paths.scripts
-    .pipe coffee()
-    .pipe uglify()
-    .pipe concat('all.min.js')
-    .pipe gulp.dest(build_paths.scripts)
+  browserify
+    entries: 'src/scripts/main.coffee'
+    transform: [reactify]
+  .bundle()
+  .pipe source('main.js')
+  .pipe buffer()
+  .pipe uglify()
+  .pipe gulp.dest(build_paths.scripts)
 
 #--- styles
 gulp.task 'styles', ->
