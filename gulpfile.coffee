@@ -7,6 +7,9 @@ plumber     = require 'gulp-plumber'
 imagemin    = require 'gulp-imagemin'
 runSequence = require 'run-sequence'
 del         = require 'del'
+browserify  = require 'browserify'
+reactify    = require 'coffee-reactify'
+source      = require 'vinyl-source-stream'
 
 paths = {
   scripts: 'src/scripts/**/*.coffee'
