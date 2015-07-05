@@ -13,7 +13,7 @@ source      = require 'vinyl-source-stream'
 buffer      = require 'vinyl-buffer'
 
 paths = {
-  scripts: 'src/scripts/**/*.coffee'
+  scripts: 'src/scripts/**/*'
   styles: 'src/styles/**/*.sass'
   images: 'src/images/**/*'
 }
@@ -30,6 +30,7 @@ gulp.task 'scripts', ->
     entries: 'src/scripts/main.coffee'
     transform: [reactify]
   .bundle()
+  .pipe plumber()
   .pipe source('main.js')
   .pipe buffer()
   .pipe uglify()
@@ -39,6 +40,7 @@ gulp.task 'scripts', ->
 gulp.task 'styles', ->
   gulp.src paths.styles
     .pipe sass()
+    .pipe plumber()
     .pipe concat('all.css')
     .pipe gulp.dest(build_paths.styles)
 
