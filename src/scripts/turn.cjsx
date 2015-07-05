@@ -3,10 +3,10 @@ Hand = require './hand.cjsx'
 
 Turn = React.createClass
   render: ->
-    <div>
-      <Hand type="rock" />
-      <Hand type="paper" />
-    </div>
+    <tr>
+      <Hand type={this.props.hand1} />
+      <Hand type={this.props.hand2} />
+    </tr>
 
 module.exports = Turn
 

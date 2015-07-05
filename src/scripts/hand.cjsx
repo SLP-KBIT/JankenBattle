@@ -2,7 +2,9 @@ React = require 'react'
 
 Hand = React.createClass
   render: ->
-    <img className={this.props.type} />
+    <td>
+      <img className={this.props.type} />
+    </td>
 
 module.exports = Hand
 
