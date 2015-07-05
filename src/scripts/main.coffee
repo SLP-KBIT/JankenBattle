@@ -1,6 +1,6 @@
 React = require('react')
 
-Hand = require('./hand.cjsx')
+Turn = require('./turn.cjsx')
 
-React.render <Hand type="rock" />, document.getElementById('content')
+React.render <Turn />, document.getElementById('content')
 
