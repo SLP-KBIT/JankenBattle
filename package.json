@@ -16,7 +16,9 @@
     "url": "https://github.com/SLP-KBIT/JankenBattle/issues"
   },
   "devDependencies": {
+    "browserify": "^10.2.4",
     "chai": "^3.0.0",
+    "coffee-reactify": "^4.0.0",
     "coffee-script": "~1.9.3",
     "del": "~1.2.0",
     "gulp": "~3.9.0",
@@ -27,7 +29,11 @@
     "gulp-sass": "~2.0.3",
     "gulp-uglify": "~1.2.0",
     "mocha": "^2.2.5",
+    "react": "^0.13.3",
+    "react-tools": "^0.13.3",
     "run-sequence": "~1.1.1",
-    "sinon": "^1.15.4"
+    "sinon": "^1.15.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
