@@ -20,7 +20,9 @@ App = React.createClass
 
   render: ->
     <div className="App">
-      <button onClick={@onClick}>battle!!</button>
+      <div style={{textAlign: "center"}}>
+        <button className="uk-button" onClick={@onClick}>battle!!</button>
+      </div>
       <Game data={@state.data} />
     </div>
 
