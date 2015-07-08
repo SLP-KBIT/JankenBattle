@@ -15,11 +15,14 @@ App = React.createClass
         @setState data: json
       ).bind(this)
 
-  componentDidMount: ->
+  onClick: (e) ->
     @loadGameResult()
 
   render: ->
-    <Game data={@state.data} />
+    <div className="App">
+      <button onClick={@onClick}>battle!!</button>
+      <Game data={@state.data} />
+    </div>
 
 module.exports = App
 
