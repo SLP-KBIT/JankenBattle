@@ -6,6 +6,6 @@ get '/' do
 end
 
 get '/api/battle' do
-  "100,200|1\n100,100|0\n300,200|2"
+  "[{\"hand1\":\"paper\",\"hand2\":\"rock\"},{\"hand1\":\"rock\",\"hand2\":\"scissors\"}]"
 end
 
