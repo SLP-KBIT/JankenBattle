@@ -1,5 +1,5 @@
 React = require 'react'
-Game = require './game.cjsx'
+Game = require './game.coffee'
 
 App = React.createClass
   getInitialState: ->

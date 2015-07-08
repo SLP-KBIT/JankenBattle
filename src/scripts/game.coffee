@@ -1,5 +1,5 @@
 React = require 'react'
-Turn = require './turn.cjsx'
+Turn = require './turn.coffee'
 
 Game = React.createClass
   render: ->

@@ -1,5 +1,5 @@
 React = require 'react'
-Hand = require './hand.cjsx'
+Hand = require './hand.coffee'
 
 Turn = React.createClass
   render: ->
