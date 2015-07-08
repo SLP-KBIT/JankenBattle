@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lib/game.h"
 
 int main(void)

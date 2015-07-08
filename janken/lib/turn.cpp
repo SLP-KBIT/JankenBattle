@@ -1,5 +1,13 @@
-#include "player.h"
-#include "turn.h"
+
+#ifndef INCLUDED_PLAYER
+# include "player.h"
+# define INCLUDED_PLAYER
+#endif
+
+#ifndef INCLUDED_TURN
+# include "turn.h"
+# define INCLUDED_TURN
+#endif
 
 int Turn::result(Player *p1, Player *p2)
 {

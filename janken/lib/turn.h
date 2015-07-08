@@ -1,3 +1,8 @@
+#ifndef INCLUDED_PLAYER
+# include "player.h"
+# define INCLUDED_PLAYER
+#endif
+
 class Turn
 {
 public:

@@ -1,4 +1,7 @@
-#include "player.h"
+#ifndef INCLUDED_PLAYER
+# include "player.h"
+# define INCLUDED_PLAYER
+#endif
 
 #define NUM 3
 

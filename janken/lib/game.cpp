@@ -1,7 +1,14 @@
 #include <stdio.h>
 
-#include "game.h"
-#include "turn.h"
+#ifndef INCLUDED_GAME
+# include "game.h"
+# define INCLUDED_GAME
+#endif
+
+#ifndef INCLUDED_TURN
+# include "turn.h"
+# define INCLUDED_TURN
+#endif
 
 void Game::exec()
 {
