@@ -1,23 +1,7 @@
 #include <stdio.h>
 #include "lib/player.h"
-
-class Player1 : public Player
-{
-public:
-  int strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p)
-  {
-    return 100;
-  }
-};
-
-class Player2 : public Player
-{
-public:
-  int strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p)
-  {
-    return 200;
-  }
-};
+#include "template/player1.h"
+#include "template/player2.h"
 
 class Turn
 {
