@@ -14,16 +14,19 @@
 # define INCLUDED_TURN
 #endif
 
-void Turn::output_result(Player *p1, Player *p2)
+void Turn::battle(Player *p1, Player *p2)
 {
-  int h1 = p1->_strategy(p2);
-  int h2 = p2->_strategy(p1);
-  int result;
+  hand1 = p1->_strategy(p2);
+  hand2 = p2->_strategy(p1);
 
-  if ( is_win(h1, h2) ) { result = 1; }
-  else if ( is_win(h2, h1) ) { result = -1; }
+  if ( is_win(hand1, hand2) ) { result = 1; }
+  else if ( is_win(hand2, hand1) ) { result = -1; }
   else { result = 0; }
-  printf("%d,%d,%d\n", h1, h2, result);
+}
+
+void Turn::output_result()
+{
+  printf("%d,%d,%d\n", hand1, hand2, result);
 }
 
 bool Turn::is_fin(Player *p1, Player *p2)
