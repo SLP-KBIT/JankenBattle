@@ -6,7 +6,7 @@
 class Turn
 {
 public:
-  int result(Player *p1, Player *p2);
+  void output_result(Player *p1, Player *p2);
 
   bool is_fin(Player *p1, Player *p2);
 
