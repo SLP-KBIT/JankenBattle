@@ -10,8 +10,8 @@ Player::Player()
   _rock = _scissors = _paper = NUM;
 }
 
-int Player::_strategy(Player *enemy)
+void Player::_strategy(Player *enemy)
 {
-  return strategy(_rock, _scissors, _paper, enemy->_rock, enemy->_scissors, enemy->_paper);
+  hand = strategy(_rock, _scissors, _paper, enemy->_rock, enemy->_scissors, enemy->_paper);
 }
 

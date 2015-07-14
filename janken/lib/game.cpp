@@ -12,7 +12,7 @@ void Game::exec()
 {
   do {
     turn.battle(&p1, &p2);
-    turn.output_result();
+    turn.output_result(&p1, &p2);
   } while (turn.is_fin(&p1, &p2));
 }
 

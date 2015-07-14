@@ -1,9 +1,14 @@
+#ifndef INCLUDED_HAND
+# include "hand.h"
+# define INCLUDED_HAND
+#endif
+
 class Player1 : public Player
 {
 public:
-  int strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p)
+  Hand strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p)
   {
-    return 100;
+    return ROCK;
   }
 };
 

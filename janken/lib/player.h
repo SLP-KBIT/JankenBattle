@@ -1,11 +1,17 @@
+#ifndef INCLUDED_HAND
+# include "hand.h"
+# define INCLUDED_HAND
+#endif
+
 class Player
 {
 public:
+  Hand hand;
   int _rock, _scissors, _paper;
   Player();
 
-  int _strategy(Player *enemy);
+  void _strategy(Player *enemy);
 
-  virtual int strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p) = 0;
+  virtual Hand strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p) = 0;
 };
 

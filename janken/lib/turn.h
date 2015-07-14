@@ -3,24 +3,25 @@
 # define INCLUDED_PLAYER
 #endif
 
+#ifndef INCLUDED_HAND
+# include "hand.h"
+# define INCLUDED_HAND
+#endif
+
 class Turn
 {
 public:
   void battle(Player *p1, Player *p2);
 
-  void output_result();
+  void output_result(Player *p1, Player *p2);
 
   bool is_fin(Player *p1, Player *p2);
 
 private:
-  static const int Rock = 100;
-  static const int Scissors = 200;
-  static const int Paper = 300;
-
-  int hand1, hand2;
+  Hand hand1, hand2;
   int result;
 
   //--- hand1が勝ったかどうか
-  bool is_win(int hand1, int hand2);
+  bool is_win(Hand hand1, Hand hand2);
 };
 
