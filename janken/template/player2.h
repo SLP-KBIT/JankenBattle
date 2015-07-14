@@ -13,7 +13,9 @@ public:
 
   Hand strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p)
   {
-    return SCISSORS;
+    if ( paper > 0 ) { return PAPER; }
+    if ( scissors > 0 ) { return SCISSORS; }
+    if ( rock > 0 ) { return ROCK; }
   }
 };
 
