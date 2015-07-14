@@ -8,6 +8,7 @@
 Player::Player()
 {
   _rock = _scissors = _paper = NUM;
+  id = 0;
 }
 
 void Player::_strategy(Player *enemy)

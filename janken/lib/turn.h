@@ -19,6 +19,7 @@ public:
 
 private:
   Hand hand1, hand2;
+  Player *winner;
   int result;
 
   //--- hand1が勝ったかどうか

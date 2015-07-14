@@ -6,8 +6,10 @@
 class Player
 {
 public:
+  int id;
   Hand hand;
   int _rock, _scissors, _paper;
+
   Player();
 
   void _strategy(Player *enemy);
