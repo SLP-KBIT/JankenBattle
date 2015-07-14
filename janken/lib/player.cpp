@@ -36,3 +36,8 @@ void Player::use_hand()
   }
 }
 
+bool Player::is_continue()
+{
+  return _rock > 0 || _scissors > 0 || _paper > 0;
+}
+

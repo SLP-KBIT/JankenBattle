@@ -27,5 +27,7 @@ private:
   Player1 p1;
   Player2 p2;
   Turn turn;
+
+  bool is_continue();
 };
 

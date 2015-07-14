@@ -18,6 +18,8 @@ public:
 
   void use_hand();
 
+  bool is_continue();
+
   virtual Hand strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p) = 0;
 };
 

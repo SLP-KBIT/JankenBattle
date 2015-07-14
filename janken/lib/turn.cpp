@@ -40,11 +40,6 @@ void Turn::output_result(Player *p1, Player *p2)
   printf("%d,%d,%d\n", p1->hand, p2->hand, id);
 }
 
-bool Turn::is_fin(Player *p1, Player *p2)
-{
-  return false;
-}
-
 bool Turn::is_win(Hand hand1, Hand hand2)
 {
   if ( hand1 == NONE ) { return false; }

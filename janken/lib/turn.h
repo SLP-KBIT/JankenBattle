@@ -15,8 +15,6 @@ public:
 
   void output_result(Player *p1, Player *p2);
 
-  bool is_fin(Player *p1, Player *p2);
-
 private:
   Hand hand1, hand2;
   Player *winner;
