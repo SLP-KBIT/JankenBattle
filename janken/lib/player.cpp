@@ -27,3 +27,12 @@ bool Player::can_use()
   }
 }
 
+void Player::use_hand()
+{
+  switch ( hand ) {
+    case ROCK : _rock--; break;
+    case SCISSORS : _scissors--; break;
+    case PAPER : _paper--; break;
+  }
+}
+

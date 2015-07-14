@@ -16,6 +16,8 @@ public:
 
   bool can_use();
 
+  void use_hand();
+
   virtual Hand strategy(int rock, int scissors, int paper, int enemy_r, int enemy_s, int enemy_p) = 0;
 };
 
