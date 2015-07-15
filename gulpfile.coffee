@@ -1,10 +1,12 @@
 gulp        = require 'gulp'
 coffee      = require 'gulp-coffee'
+cjsx        = require 'gulp-cjsx'
 sass        = require 'gulp-sass'
 concat      = require 'gulp-concat'
 uglify      = require 'gulp-uglify'
 plumber     = require 'gulp-plumber'
 imagemin    = require 'gulp-imagemin'
+gutil       = require 'gulp-util'
 runSequence = require 'run-sequence'
 del         = require 'del'
 browserify  = require 'browserify'
@@ -26,15 +28,11 @@ build_paths = {
 
 #--- scripts
 gulp.task 'scripts', ->
-  browserify
-    entries: 'src/scripts/main.coffee'
-    transform: [reactify]
-  .bundle()
-  .pipe plumber()
-  .pipe source('main.js')
-  .pipe buffer()
-  #.pipe uglify()
-  .pipe gulp.dest(build_paths.scripts)
+  gulp.src paths.scripts
+    .pipe cjsx({bare: true}).on('error', gutil.log)
+    .pipe plumber()
+    .pipe concat('main.js')
+    .pipe gulp.dest(build_paths.scripts)
 
 #--- styles
 gulp.task 'styles', ->

@@ -1,6 +1,3 @@
-React = require 'react'
-Game = require './game.coffee'
-
 App = React.createClass
   getInitialState: ->
     data: []
@@ -25,6 +22,4 @@ App = React.createClass
       </div>
       <Game data={@state.data} />
     </div>
-
-module.exports = App
 
