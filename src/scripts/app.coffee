@@ -12,14 +12,12 @@ App = React.createClass
         @setState data: json
       ).bind(this)
 
-  onClick: (e) ->
+  battleStart: (e) ->
     @loadGameResult()
 
   render: ->
     <div className="App">
-      <div style={{textAlign: "center"}}>
-        <button className="uk-button" onClick={@onClick}>battle!!</button>
-      </div>
+      <Button onClick={@battleStart} />
       <Game data={@state.data} />
     </div>
 
