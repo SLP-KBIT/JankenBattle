@@ -15,7 +15,7 @@ source      = require 'vinyl-source-stream'
 buffer      = require 'vinyl-buffer'
 
 paths = {
-  scripts: 'src/scripts/**/*'
+  scripts: ['src/scripts/**/*', '!src/scripts/**/main.coffee']
   styles: 'src/styles/**/*.sass'
   images: 'src/images/**/*'
 }
@@ -27,11 +27,18 @@ build_paths = {
 }
 
 #--- scripts
-gulp.task 'scripts', ->
+gulp.task 'scripts', ['main'], ->
   gulp.src paths.scripts
     .pipe plumber()
     .pipe cjsx({bare: true}).on('error', gutil.log)
-    .pipe concat('main.js')
+    .pipe concat('components.js')
+    .pipe gulp.dest(build_paths.scripts)
+
+#--- main component
+gulp.task 'main', ->
+  gulp.src 'src/scripts/main.coffee'
+    .pipe plumber()
+    .pipe cjsx({bare: true}).on('error', gutil.log)
     .pipe gulp.dest(build_paths.scripts)
 
 #--- styles
