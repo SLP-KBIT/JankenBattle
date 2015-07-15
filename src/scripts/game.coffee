@@ -1,6 +1,3 @@
-React = require 'react'
-Turn = require './turn.coffee'
-
 Game = React.createClass
   render: ->
     rows = @props.data.map (turn) ->
@@ -8,6 +5,4 @@ Game = React.createClass
     <table className="uk-table uk-width-1-1">
       {rows}
     </table>
-
-module.exports = Game
 
