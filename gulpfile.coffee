@@ -29,8 +29,8 @@ build_paths = {
 #--- scripts
 gulp.task 'scripts', ->
   gulp.src paths.scripts
-    .pipe cjsx({bare: true}).on('error', gutil.log)
     .pipe plumber()
+    .pipe cjsx({bare: true}).on('error', gutil.log)
     .pipe concat('main.js')
     .pipe gulp.dest(build_paths.scripts)
 
