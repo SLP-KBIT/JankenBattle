@@ -1,7 +1,9 @@
 Player = React.createClass
   render: ->
+    player_name = "Player" + @props.id
+
     <div className="Player">
-      <h2 className="uk-text-center">Player</h2>
+      <h2 className="uk-text-center">{player_name}</h2>
       <div className="uk-form">
         <table>
           <tr>

@@ -22,10 +22,10 @@ App = React.createClass
         <h1>メインページ</h1>
         <div className="uk-grid uk-grid-divider">
           <div className="uk-width-1-2">
-            <Player />
+            <Player id=1 />
           </div>
           <div className="uk-width-1-2">
-            <Player />
+            <Player id=2 />
           </div>
         </div>
         <div className="uk-grid">
