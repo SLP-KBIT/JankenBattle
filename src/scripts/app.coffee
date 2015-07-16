@@ -17,7 +17,25 @@ App = React.createClass
 
   render: ->
     <div className="App">
-      <Button onClick={@battleStart} />
-      <Game data={@state.data} />
+      <div className="uk-container uk-container-center">
+        <br />
+        <h1>メインページ</h1>
+        <div className="uk-grid uk-grid-divider">
+          <div className="uk-width-1-2">
+            <Player />
+          </div>
+          <div className="uk-width-1-2">
+            <Player />
+          </div>
+        </div>
+        <div className="uk-grid">
+          <div className="uk-width-1-3"></div>
+          <div className="uk-width-1-3">
+            <Button onClick={@battleStart} />
+            <Game data={@state.data} />
+          </div>
+          <div className="uk-width-1-3"></div>
+        </div>
+      </div>
     </div>
 

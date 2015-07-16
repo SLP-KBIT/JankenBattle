@@ -1,2 +1,2 @@
-React.render <App />, document.getElementById('content')
+React.render <App />, document.body
 
