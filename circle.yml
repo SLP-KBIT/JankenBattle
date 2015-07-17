@@ -1,0 +1,4 @@
+test:
+  override:
+    - npm test
+    - bundle exec rspec --color --format documentation
