@@ -20,7 +20,14 @@ App = React.createClass
       <div className="uk-container uk-container-center">
         <br />
         <h1>メインページ</h1>
-        <PlayerForm />
+        <div className="uk-grid uk-grid-divider">
+          <div className="uk-width-1-2">
+            <Player id=1 />
+          </div>
+          <div className="uk-width-1-2">
+            <Player id=2 />
+          </div>
+        </div>
         <br />
         <div className="uk-grid">
           <div className="uk-width-1-3"></div>
