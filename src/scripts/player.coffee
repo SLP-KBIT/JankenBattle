@@ -5,7 +5,7 @@ Player = React.createClass
     name: ""
 
   handleUpload: ->
-    console.log @state.name
+    @props.onUpload(@props.id, @state.name)
 
   render: ->
     player_name = "Player" + @props.id

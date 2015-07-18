@@ -9,3 +9,8 @@ get '/api/battle' do
   "[{\"hand1\":\"paper\",\"hand2\":\"rock\"},{\"hand1\":\"rock\",\"hand2\":\"scissors\"}]"
 end
 
+post '/api/upload' do
+  p params
+  true
+end
+

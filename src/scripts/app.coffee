@@ -12,6 +12,14 @@ App = React.createClass
         @setState data: json
       ).bind(this)
 
+  handleUpload: (id, name) ->
+    $.ajax
+      url: '/api/upload'
+      type: 'POST'
+      data: {id: id, name: name}
+      dataType: 'json'
+      cache: false
+
   battleStart: (e) ->
     @loadGameResult()
 
@@ -22,10 +30,10 @@ App = React.createClass
         <h1>メインページ</h1>
         <div className="uk-grid uk-grid-divider">
           <div className="uk-width-1-2">
-            <Player id=1 />
+            <Player id=1 onUpload={@handleUpload} />
           </div>
           <div className="uk-width-1-2">
-            <Player id=2 />
+            <Player id=2 onUpload={@handleUpload} />
           </div>
         </div>
         <br />
