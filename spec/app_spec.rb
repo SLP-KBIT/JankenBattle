@@ -23,6 +23,13 @@ describe 'App' do
         expect(subject).to be_ok
       end
     end
+
+    describe 'POST /api/upload' do
+      subject { post '/api/upload' }
+      it '正常なレスポンスが返ること' do
+        expect(subject).to be_ok
+      end
+    end
   end
 end
 

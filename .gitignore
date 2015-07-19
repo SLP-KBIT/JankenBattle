@@ -6,3 +6,6 @@ a.out
 *.exe
 *.o
 
+/tmp/*
+!/tmp/.keep
+
