@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
+require './lib/strategy'
+
 get '/' do
   slim :index
 end
@@ -10,9 +12,8 @@ get '/api/battle' do
 end
 
 post '/api/upload' do
-  File.open('./tmp/strategy.c', 'w') do |f|
-    f.puts params[:text]
-  end
+  strategy = Strategy.new(params[:text])
+  strategy.write
   true
 end
 
