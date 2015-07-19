@@ -12,7 +12,7 @@ class Strategy
     end
   end
 
-  def slice_template(text)
+  def slice_without(text = nil)
     text ||= File.read(JANKEN_PATH + '/template/player1.h').to_s
     each_line = text.split(/\r\n|\n/)
     s = get_index_of_target(each_line, 'PLAYER_STRATEGY_START')
@@ -22,8 +22,9 @@ class Strategy
     [header, footer]
   end
 
-  def slice
-    each_line = @text.split(/\r\n|\n/)
+  def slice_within(text = nil)
+    text ||= @text
+    each_line = text.split(/\r\n|\n/)
     s = get_index_of_target(each_line, 'PLAYER_STRATEGY_START')
     e = get_index_of_target(each_line, 'PLAYER_STRATEGY_END')
     each_line.slice((s + 1)...e).join('\n')
