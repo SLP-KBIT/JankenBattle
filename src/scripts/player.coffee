@@ -14,7 +14,7 @@ Player = React.createClass
     <div className="Player">
       <h2 className="uk-text-center">{player_name}</h2>
       <form className="uk-form">
-        <table>
+        <table className="uk-table">
           <tr>
             <th className="uk-width-1-3 uk-text-center">プレイヤ名</th>
             <td className="uk-width-2-3">
@@ -24,12 +24,14 @@ Player = React.createClass
           <tr>
             <th className="uk-width-1-3 uk-text-center">戦略</th>
             <td className="uk-width-2-3">
-              <textarea valueLink={@linkState("text")}></textarea>
+              <textarea className="uk-width-1-1" valueLink={@linkState("text")}></textarea>
             </td>
           </tr>
         </table>
         <br />
-        <button className="uk-button" type="button" onClick={@handleUpload}>upload</button>
+        <div className="uk-text-center">
+          <button className="uk-button uk-button-primary" type="button" onClick={@handleUpload}>upload</button>
+        </div>
       </form>
     </div>
 
