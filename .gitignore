@@ -7,5 +7,6 @@ a.out
 *.o
 
 /tmp/*
-!/tmp/.keep
+/janken/strategy/*
+!.keep
 

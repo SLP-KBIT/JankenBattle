@@ -7,8 +7,6 @@ describe Strategy do
   include Rack::Test::Methods
 
   describe 'メソッドの動作確認' do
-    before(:each) { strategy.write }
-
     let(:text) do
       <<'EOS'
 hoge
@@ -22,9 +20,18 @@ EOS
     end
     let(:strategy) { Strategy.new(text) }
 
+    before(:each) { strategy.write }
+
     describe '#exist?' do
       it 'ファイルの存在を確認できること' do
         expect(strategy.exist?).to eq true
+      end
+    end
+
+    describe '#exist_strategy?' do
+      before(:each) { strategy.create }
+      it '結合した戦略ファイルの存在を確認できること' do
+        expect(strategy.exist_strategy?).to eq true
       end
     end
 

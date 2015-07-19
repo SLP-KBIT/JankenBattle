@@ -12,6 +12,14 @@ class Strategy
     end
   end
 
+  def create
+    header, footer = slice_without
+    text = [header, slice_within, footer].join('\n')
+    File.open(JANKEN_PATH + '/strategy/player1.h', 'w') do |f|
+      f.puts text
+    end
+  end
+
   def slice_without(text = nil)
     text ||= File.read(JANKEN_PATH + '/template/player1.h').to_s
     each_line = text.split(/\r\n|\n/)
@@ -32,6 +40,10 @@ class Strategy
 
   def exist?
     File.exist?(FILE_PATH)
+  end
+
+  def exist_strategy?
+    File.exist?(JANKEN_PATH + '/strategy/player1.h')
   end
 
   private
