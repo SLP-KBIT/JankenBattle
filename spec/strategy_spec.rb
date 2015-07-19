@@ -28,6 +28,12 @@ EOS
       end
     end
 
+    describe '#slice_template' do
+      it '識別子以外の文字列を切り出せること' do
+        expect(strategy.slice_template(text)).to eq ['hoge\nfoo', 'poge']
+      end
+    end
+
     describe '#slice' do
       it '識別子以内の文字列を切り出せること' do
         expect(strategy.slice).to eq 'piyo\nfuga'
