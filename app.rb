@@ -10,7 +10,9 @@ get '/api/battle' do
 end
 
 post '/api/upload' do
-  p params
+  File.open('./tmp/strategy.c', 'w') do |f|
+    f.puts params[:text]
+  end
   true
 end
 

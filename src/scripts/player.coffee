@@ -3,9 +3,10 @@ Player = React.createClass
 
   getInitialState: ->
     name: ""
+    text: ""
 
   handleUpload: ->
-    @props.onUpload(@props.id, @state.name)
+    @props.onUpload(@props.id, @state.name, @state.text)
 
   render: ->
     player_name = "Player" + @props.id
@@ -21,9 +22,9 @@ Player = React.createClass
             </td>
           </tr>
           <tr>
-            <th className="uk-width-1-3 uk-text-center">戦略ファイル</th>
+            <th className="uk-width-1-3 uk-text-center">戦略</th>
             <td className="uk-width-2-3">
-              <input className="uk-width-1-1" type="file" />
+              <textarea valueLink={@linkState("text")}></textarea>
             </td>
           </tr>
         </table>

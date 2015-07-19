@@ -12,11 +12,11 @@ App = React.createClass
         @setState data: json
       ).bind(this)
 
-  handleUpload: (id, name) ->
+  handleUpload: (id, name, text) ->
     $.ajax
       url: '/api/upload'
       type: 'POST'
-      data: {id: id, name: name}
+      data: {id: id, name: name, text: text}
       dataType: 'json'
       cache: false
 
