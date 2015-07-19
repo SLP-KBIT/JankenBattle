@@ -37,13 +37,13 @@ EOS
 
     describe '#slice_without' do
       it '識別子以外の文字列を切り出せること' do
-        expect(strategy.slice_without(text)).to eq ['hoge\nfoo', 'poge']
+        expect(strategy.slice_without(text)).to eq [%w(hoge foo), %w(poge)]
       end
     end
 
     describe '#slice_within' do
       it '識別子以内の文字列を切り出せること' do
-        expect(strategy.slice_within).to eq 'piyo\nfuga'
+        expect(strategy.slice_within).to eq %w(piyo fuga)
       end
     end
   end

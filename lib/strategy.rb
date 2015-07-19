@@ -14,7 +14,7 @@ class Strategy
 
   def create
     header, footer = slice_without
-    text = [header, slice_within, footer].join('\n')
+    text = [header, slice_within, footer].flatten
     File.open(JANKEN_PATH + '/strategy/player1.h', 'w') do |f|
       f.puts text
     end
@@ -25,8 +25,8 @@ class Strategy
     each_line = text.split(/\r\n|\n/)
     s = get_index_of_target(each_line, 'PLAYER_STRATEGY_START')
     e = get_index_of_target(each_line, 'PLAYER_STRATEGY_END')
-    header = each_line.slice(0..(s - 1)).join('\n')
-    footer = each_line.slice((e + 1)..-1).join('\n')
+    header = each_line.slice(0..(s - 1))
+    footer = each_line.slice((e + 1)..-1)
     [header, footer]
   end
 
@@ -35,7 +35,7 @@ class Strategy
     each_line = text.split(/\r\n|\n/)
     s = get_index_of_target(each_line, 'PLAYER_STRATEGY_START')
     e = get_index_of_target(each_line, 'PLAYER_STRATEGY_END')
-    each_line.slice((s + 1)...e).join('\n')
+    each_line.slice((s + 1)...e)
   end
 
   def exist?
