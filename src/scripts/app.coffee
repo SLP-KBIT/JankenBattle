@@ -14,9 +14,9 @@ App = React.createClass
 
   handleUpload: (id, name, text) ->
     $.ajax
-      url: '/api/upload'
+      url: '/api/upload/' + id
       type: 'POST'
-      data: {id: id, name: name, text: text}
+      data: {name: name, text: text}
       dataType: 'json'
       cache: false
 
