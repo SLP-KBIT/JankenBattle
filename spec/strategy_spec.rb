@@ -7,43 +7,35 @@ describe Strategy do
   include Rack::Test::Methods
 
   describe 'メソッドの動作確認' do
-    let(:text) do
-      <<'EOS'
-hoge
-foo
-//--- PLAYER_STRATEGY_START
-piyo
-fuga
-//--- PLAYER_STRATEGY_END
-poge
-EOS
+    let(:text) { File.read(File.dirname(__FILE__) + '/submit.c') }
+    let(:strategy) do
+      template_mock = double('Template Class')
+      submit_mock = double('Submit Class')
+      allow(template_mock)
+        .to receive(:get_slice_text)
+        .and_return([%w(hoge foo), %w(poge)])
+      allow(submit_mock)
+        .to receive(:get_slice_text)
+        .and_return([%w(poge fuga)])
+      strategy = Strategy.new(id, text)
+      allow(strategy).to receive(:template).and_return(template_mock)
+      allow(strategy).to receive(:submit).and_return(submit_mock)
+      strategy
     end
-    let(:strategy) { Strategy.new(text) }
 
     before(:each) { strategy.write }
 
+    describe '#write' do
+      let(:id) { 1 }
+      it 'ファイルを書き込めること' do
+        expect(strategy.write).to be_truthy
+      end
+    end
+
     describe '#exist?' do
+      let(:id) { 1 }
       it 'ファイルの存在を確認できること' do
-        expect(strategy.exist?).to eq true
-      end
-    end
-
-    describe '#exist_strategy?' do
-      before(:each) { strategy.create }
-      it '結合した戦略ファイルの存在を確認できること' do
-        expect(strategy.exist_strategy?).to eq true
-      end
-    end
-
-    describe '#slice_without' do
-      it '識別子以外の文字列を切り出せること' do
-        expect(strategy.slice_without(text)).to eq [%w(hoge foo), %w(poge)]
-      end
-    end
-
-    describe '#slice_within' do
-      it '識別子以内の文字列を切り出せること' do
-        expect(strategy.slice_within).to eq %w(piyo fuga)
+        expect(strategy.exist?).to be_truthy
       end
     end
   end
