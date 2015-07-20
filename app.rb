@@ -12,7 +12,7 @@ get '/api/battle' do
 end
 
 post '/api/upload' do
-  strategy = Strategy.new(params[:text])
+  strategy = Strategy.new(params[:id], params[:text])
   strategy.write
   true
 end
