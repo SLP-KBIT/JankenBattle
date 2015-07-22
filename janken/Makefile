@@ -15,5 +15,5 @@ player.o: lib/player.cpp
 	g++ -c lib/player.cpp
 
 clean:
-	rm *.o *.exe
+	rm -f *.o *.exe
 
