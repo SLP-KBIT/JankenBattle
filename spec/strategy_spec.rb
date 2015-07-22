@@ -8,20 +8,7 @@ describe Strategy do
 
   describe 'メソッドの動作確認' do
     let(:text) { File.read(File.dirname(__FILE__) + '/submit.c') }
-    let(:strategy) do
-      template_mock = double('Template Class')
-      submit_mock = double('Submit Class')
-      allow(template_mock)
-        .to receive(:get_slice_text)
-        .and_return([%w(hoge foo), %w(poge)])
-      allow(submit_mock)
-        .to receive(:get_slice_text)
-        .and_return([%w(poge fuga)])
-      strategy = Strategy.new(id, text)
-      allow(strategy).to receive(:template).and_return(template_mock)
-      allow(strategy).to receive(:submit).and_return(submit_mock)
-      strategy
-    end
+    let(:strategy) { Strategy.new(id, text) }
 
     before(:each) { strategy.write }
 

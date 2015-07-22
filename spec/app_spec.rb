@@ -24,8 +24,8 @@ describe 'App' do
       end
     end
 
-    describe 'POST /api/upload' do
-      subject { post '/api/upload' }
+    describe 'POST /api/upload/:id' do
+      subject { post '/api/upload/1' }
       it '正常なレスポンスが返ること' do
         expect(subject).to be_ok
       end

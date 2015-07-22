@@ -19,8 +19,8 @@ class Strategy
   end
 
   def write
-    header, footer = template.get_slice_text
-    main = submit.get_slice_text
+    header, footer = template.slice_text
+    main = submit.slice_text
     text = [header, main, footer].flatten
     File.open(@path, 'w') { |f| f.puts text }
     @path

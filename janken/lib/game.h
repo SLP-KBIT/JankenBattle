@@ -9,12 +9,12 @@
 #endif
 
 #ifndef INCLUDED_PLAYER1
-# include "../template/player1.h"
+# include "../strategy/player1.h"
 # define INCLUDED_PLAYER1
 #endif
 
 #ifndef INCLUDED_PLAYER2
-# include "../template/player2.h"
+# include "../strategy/player2.h"
 # define INCLUDED_PLAYER2
 #endif
 
